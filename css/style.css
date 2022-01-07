@@ -58,6 +58,7 @@ body {
 }
 
 .main-nav {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -94,11 +95,28 @@ body {
   color: var(--heading-color);
 }
 
+.header-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -1px;
+  border-radius: 2px;
+  opacity: 0;
+  background-color: var(--accent-color);
+}
+
+.header-link:hover::after {
+  opacity: 1;
+}
+
 .header-logo-sudio {
   color: var(--heading-color);
 }
 
 .header-link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -665,8 +683,25 @@ body {
   background-color: var(--secondary-color);
   width: 370px;
   height: 404px;
-  border-radius: 0 0 4px 4px;
   cursor: pointer;
+}
+
+.examples-item {
+  position: relative;
+}
+
+.examples-item::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+
+.examples-item:hover::before {
+  opacity: 1;
 }
 
 .examples-item:hover,
@@ -677,7 +712,7 @@ body {
 
 .examples-item-div {
   width: 370px;
-  border: 2px solid #eeeeee;
+  border: 1px solid #eeeeee;
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
@@ -706,4 +741,54 @@ body {
   height: 36px;
   width: 322px;
   margin-bottom: 4px;
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--secondary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal-button {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-color);
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 auto;
+}
+
+.modal-icon {
+  width: 11px;
+  height: 11px;
+  fill: var(--heading-color);
 }
