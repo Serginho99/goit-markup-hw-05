@@ -230,6 +230,7 @@ body {
   clip-path: inset(50%);
   margin: -1px;
 }
+
 .about-title {
   font-size: 14px;
   line-height: 1.14;
@@ -304,6 +305,26 @@ body {
 .work-list {
   display: inline-block;
   display: flex;
+}
+
+.work-item {
+  position: relative;
+}
+
+.tech-title {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.tech-div {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .work-item:not(:last-child) {
