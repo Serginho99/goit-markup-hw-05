@@ -107,7 +107,8 @@ body {
   background-color: var(--accent-color);
 }
 
-.header-link:hover::after {
+.header-link:hover::after,
+.header-link:focus::after {
   opacity: 1;
 }
 
@@ -678,16 +679,12 @@ body {
 }
 
 .examples-item {
+  position: relative;
   margin-right: 30px;
   margin-bottom: 30px;
   background-color: var(--secondary-color);
   width: 370px;
-  height: 404px;
   cursor: pointer;
-}
-
-.examples-item {
-  position: relative;
 }
 
 .examples-item::before {
