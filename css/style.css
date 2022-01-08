@@ -95,22 +95,16 @@ body {
   color: var(--heading-color);
 }
 
-.header-link::after {
+.current::after {
   content: "";
-  display: block;
   position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 4px;
-  bottom: -1px;
   border-radius: 2px;
-  opacity: 0;
   background-color: var(--accent-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-link:hover::after,
-.header-link:focus::after {
-  opacity: 1;
 }
 
 .header-logo-sudio {
@@ -125,6 +119,10 @@ body {
   font-weight: 500;
   color: var(--heading-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current {
+  color: var(--accent-color);
 }
 
 .header-link:hover,
