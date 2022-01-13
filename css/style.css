@@ -824,6 +824,9 @@ body {
 }
 
 .modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   display: flex;
   width: 30px;
   height: 30px;
@@ -833,7 +836,6 @@ body {
   background-color: var(--secondary-color);
   align-items: center;
   justify-content: center;
-  margin: 0 0 0 auto;
 }
 
 .modal-icon {
